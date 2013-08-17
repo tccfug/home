@@ -1,15 +1,14 @@
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
-
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="//code.jquery.com/jquery.js"></script>
 
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 
-<!DOCTYPE html>
-<html lang="en">
+
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,10 +16,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
-    <title>Jumbotron Template for Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.css" rel="stylesheet">
+    <title>TCCFUG</title>
 
     <!-- Custom styles for this template -->
     <link href="jumbotron.css" rel="stylesheet">
@@ -36,19 +32,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">TCCFUG</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="active"><a href="#meetings">Meetings</a></li>
+            <li><a href="#speakers">Speakers</a></li>
+            <li><a href="#sponsors">Sponsors</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <a href="#resources" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li><a href="#jobs">Jobs</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#hosting">Hosting</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Nav header</li>
                 <li><a href="#">Separated link</a></li>
@@ -83,32 +80,29 @@
         <!-- Example row of columns -->
         <div class="row">
           <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+            <h2>About Us</h2>
+            <p>Your primary source for ColdFusion information in the Twin Cities area. The local user group community is 479<!--- TODO: #dynamic get this ---> members strong! Become a member and join our growning community today.</p>
+            <p><a class="btn btn-default" href="#register">Register &raquo;</a></p>
           </div>
           <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+            <h2>Meetings</h2>
+            <p>We meet the first Wednesday of every month in <!---TODO: #dynamic location ---> Lakeville Minnesota at ImageTrend Inc. Be sure to attend the next meeting to stay connected to the ColdFusion community.</p>
+            <p><a class="btn btn-default" href="#rsvp">RSVP &raquo;</a></p>
          </div>
           <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+            <h2>What we do</h2>
+            <p>... Tag Cloud ....</p>
+            <p><a class="btn btn-default" href="#presentations">Presentations &raquo;</a></p>
           </div>
         </div>
 
         <hr>
 
         <footer>
-          <p>&copy; Company 2013</p>
+        	<p>&copy; TCCFUG 2013. Content is brought to you through a community contribution to the TCCFUG GitHub repository. TCCFUG is an official Adobe ColdFusion User Group.</p>
+
         </footer>
       </div>
-
     </div> <!-- /container -->
-
-    <script src="../../assets/js/jquery.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
   </body>
 </html>
