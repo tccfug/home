@@ -10,6 +10,16 @@
 		<title>TCCFUG</title>
 		<!-- Bootstrap -->
     	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+		<script src="js/jquery-2.1.1.min.js"></script>
+   		<!-- Include all compiled plugins (below), or include individual files as needed -->
+    	<script src="js/bootstrap.min.js"></script>
+
+		<!-- Eventbrite -->
+		<script type="text/javascript" src="https://evbdn.eventbrite.com/s3-s3/static/js/platform/Eventbrite.jquery.js"></script>
+
+
 	</head>
 	<body>
 		<div class="navbar navbar-inverse navbar-fixed-top">
@@ -61,12 +71,13 @@
 		<!-- Main jumbotron for a primary marketing message or call to action -->
 		<div class="jumbotron">
 
-		<div class="container">
-		<!-- <i class="icon-calendar icon-large"> -->
-			<h1></i> September 4th<!-- <i class="icon-calendar-empty"></i> --></h1>
-			<h2>Implementing CKEditor within CFML - Ben Ellefson</h2>
-			<p>We'll dive into the world of CKEditor. Learn how to give your users a wysiwyg editor that is the industry standard. Includes code examples from the basics to implementing a simple instance all the way to customizing and creating your own dialog boxes.</p>
-			<p><a class="btn btn-primary btn-large">RSVP &raquo;</a></p>
+		<div class="container" id="eventbrite-list">
+			<!-- Eventbrite holders -->			
+			<h1 id="event-title"></h1>
+			<h2 id="event-organizer"></h2>
+			<h3 id="event-date"></h3>
+			<span id="event-description"></span>
+			<p><a id="rsvp" class="btn btn-primary btn-large" target="_blank">RSVP &raquo;</a></p>
 			</div> <!-- /container -->
 		</div>
 
@@ -108,7 +119,49 @@
 		
 	</body>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="js/jquery-2.1.1.min.js"></script>
-   <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+
+
+
+	<script type='text/javascript'>
+	jQuery(document).ready(function(){
+	    Eventbrite({'app_key': "3YL6XWYZNYOMSYTV27"}, function(eb){
+	      // NEW CODE
+	        var eb_options = {
+	            'user' : 'tccfug@gmail.com',
+	            'event_statuses' : 'live, started'
+	        };
+	        eb.user_list_events( eb_options, function( response ){
+	      // END NEW CODE
+	            var eventbrite_list = eb.utils.eventList( response, eb.utils.eventListRow );
+
+	            //jQuery("#eventbrite-list").html(eventbrite_list);
+	            //console.log(response);  
+	            //console.log(response.events)
+
+	            var eventObject = response.events[0].event;
+
+	            //console.log(eventObject);
+	            jQuery("#event-title").html(eventObject.title);
+	            jQuery("#event-description").html(eventObject.description);
+
+	            //update event date to be new JS date ... could manupulate from here with JS date functions
+	            var event_date = new Date(eventObject.start_date);
+	            //console.log(event_date);
+	            //TODO: update date format to be more friendly
+	            jQuery("#event-date").html(event_date);
+
+	            //update RSVP button to link to eventbrite info
+	            jQuery("a#rsvp").attr("href",eventObject.url);
+
+	            var organizer = eventObject.organizer;
+	            console.log(organizer);
+	            jQuery("#event-organizer").html(organizer.name);
+
+
+	        });
+	    });
+	});
+	</script>
+
+
 </html>
